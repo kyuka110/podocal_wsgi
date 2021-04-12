@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
     python3-pip \
     libapache2-mod-wsgi-py3
 RUN pip3 install -U pip
+RUN pip3 install boto3
 RUN a2dismod mpm_event && a2enmod mpm_worker
 
 COPY site.conf /etc/apache2/sites-available/000-default.conf
@@ -21,3 +22,4 @@ ENV APACHE_LOG_DIR /var/log/apache2
 ENV APACHE_LOCK_DIR /var/lock/apache2
 
 CMD ["apache2ctl", "-D", "FOREGROUND"]
+

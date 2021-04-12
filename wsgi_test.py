@@ -107,15 +107,6 @@ def dump(environ):
 
 
 def application(environ, start_response):
-#     print('request message #1', file=environ['wsgi.errors'])
-#     print('global message #1')
-#     print('queued message #1', end='')
-#     print('request message #2', file=environ['wsgi.errors'])
-#     print('global message #2')
-#     print('queued message #2', end='')
-#     print('request message #3', file=environ['wsgi.errors'])
-#     print('queued message #3', '+', sep="", end='')
-#     print('queued message #4', end='')
 
     result = dump(environ)
 
